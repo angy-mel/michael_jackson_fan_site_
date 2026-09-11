@@ -2,7 +2,7 @@ function Home() {
   return (
     <section id="home">
       <div className="hero-image">
-        <img src="/preview.home.png" alt="Michael Jackson sihouette" />
+        <img src={`${import.meta.env.BASE_URL}preview.home.png`} alt="Michael Jackson sihouette" />
       </div>
       <div className="hero-content">
         <p>The voice.</p>
