@@ -30,16 +30,15 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies and Build
-        run: |
-          cd michael_jackson_project
-          npm ci
-          npm run build
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Upload artifact
+      - name: Build site
+        run: npm run build
+      - name: Setup Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./michael_jackson_project/dist"
+        path: "./dist"
 
       - name: Deploy to GitHub Pages
         id: deployment
