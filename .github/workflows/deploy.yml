@@ -1,4 +1,3 @@
-
 name: Deploy Vite Site to Pages
 
 on:
@@ -12,7 +11,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -40,9 +39,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './michael_jackson_project/dist'
+          path: "./michael_jackson_project/dist"
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
